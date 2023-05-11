@@ -17,6 +17,8 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    /*width: 96.5%;*/
+    position: fixed;
     padding: 0 24px;
     border-bottom: 1px solid var(--very-light-pink);
     background-color: var(--back-gray);
@@ -216,6 +218,7 @@ nav .search-iconMobile img{
 /*Shoopping car*/
 aside {
     width: 360px;
+    top: 61px;
     box-sizing: border-box;
     position: absolute;
     right: 0;
@@ -294,7 +297,7 @@ aside {
 
 /*cards container*/
 .cards-container {
-    padding-top: 15px;
+    padding-top: 75px;
     padding-bottom: 15px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
@@ -410,6 +413,9 @@ aside {
     .desktop-menu{
     display: none;
     }
+    nav{
+        width: 92%;
+    }
     nav .search{
     display: none;
     }
@@ -433,6 +439,11 @@ aside {
 @media (min-width: 1024px){
     .mobile-menu{
         display: none;
+    }
+}
+@media (min-width: 760px){
+    nav{
+        width: 96.5%;
     }
 }
 @media (min-width: 1190px){
