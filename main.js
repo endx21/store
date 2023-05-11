@@ -36,14 +36,7 @@ function toggleShoppingCar(){
     mobileMenu.classList.add("inactive");
     productDetailOpen.classList.add("inactive");
 }
-/*function open(){
-    productDetailOpen.classList.remove("inactive");
-    desktopMenu.classList.add("inactive");
-    mobileMenu.classList.add("inactive");
-    shoppingCar.classList.add("inactive");
-    
-    renderProduct(showAsideDescription());
-}*/
+
 function close(){
     productDetailOpen.classList.add("inactive");
 }
@@ -154,7 +147,8 @@ function renderProduct(arr){
         productImg.addEventListener("click", open);
 
         cardsContainer.appendChild(productCard);
-
+        
+        // COPIAR LOS ELEMENTOS DE UN CARD AL ASIDE
         function open(){
             productDetailOpen.classList.remove("inactive");
             desktopMenu.classList.add("inactive");
@@ -173,69 +167,3 @@ function renderProduct(arr){
 
 }
 renderProduct(productList);
-//productImg.querySelector(".productImg");
-    // COPIAR IMG DE CARD EN ASIDE
-    //ImgDetail.setAttribute('src', open.target.src);
-
-    // COPIAR LOS ELEMENTOS DE UN CARD AL ASIDE
-    //productDetailOpen.children[2].children[0].textContent = productInfo.children[0].children[0].textContent;
-    //productDetailOpen.children[2].children[1].textContent = productInfo.children[0].children[1].textContent;
-   // productDetailOpen.children[2].children[2].textContent = product[productCard.getAttribute('id')].description;//traer la descripcion del producto
-    //productDetailOpen.children[2].children[3].setAttribute('value', product[productCard.getAttribute('id')].id);//colocar id en el boton de compra del aside
-
-
-/*<div class="product-detail-close">
-<img src="./icons/icon_close.png" alt="close">
-</div>
-<img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-<div class="product-info">
-<p>$35,00</p>
-<p>Bike</p>
-<p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-<button class="primary-button add-to-cart-button">
-    <img src="./icons/bt_add_to_cart.png" alt="add to cart">
-    Add to cart
-</button>
-</div>
-function renderPDetail(arrs){
-    for(PDetail of arrs){
-        const pDClose = document.createElement("div");
-        pDClose.classList.add("product-detail-close");
-
-        const imgClose = document.createElement("img");
-        imgClose.setAttribute("src", "./icons/icon_close.png");
-        imgClose.addEventListener("click", close);
-
-        pDClose.appendChild(imgClose);
-
-        const productImgD = document.createElement("img");
-        productImgD.setAttribute("src", PDetail.imagen);
-
-        const productInfo = document.createElement("div");
-        productInfo.classList.add("product-info");
-
-        const priceD = document.createElement("p");
-        priceD.innerText = "$" + PDetail.price;
-        const nameD = document.createElement("p");
-        nameD.innerText = PDetail.name;
-        const productDescrip = document.createElement("p");
-        productDescrip.innerText = PDetail.description;
-
-        const buttonAdd = document.createElement("button");
-        buttonAdd.classList.add("primary-button", "add-to-cart-button");
-        buttonAdd.innerText = "Add to cart";
-
-        const imgButton = document.createElement("img");
-        imgButton.setAttribute("src", "./icons/bt_add_to_cart.png");
-        
-        buttonAdd.appendChild(imgButton);
-        productInfo.appendChild(priceD);
-        productInfo.appendChild(nameD);
-        productInfo.appendChild(productDescrip);
-        productInfo.appendChild(buttonAdd);
-        productDetailOpen.appendChild(pDClose);
-        productDetailOpen.appendChild(productImgD);
-        productDetailOpen.appendChild(productInfo);
-    }
-}
-renderPDetail(productList);*/
