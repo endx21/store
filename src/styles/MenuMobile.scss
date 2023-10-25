@@ -1,0 +1,68 @@
+@import 'vars';
+
+/*Mobile menu*/
+.mobile-menu {
+    padding: 24px;
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    background-color: var(--white);
+}
+.mobile-menu a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    /* margin-bottom: 24px; */
+}
+.mobile-menu ul {
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+}
+.mobile-menu ul:nth-child(1) {
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.mobile-menu ul li {
+    margin-bottom: 24px;
+}
+.email {
+    font-size: var(--sm);
+    font-weight: 300 !important;
+}
+.sign-out {
+    font-size: var(--sm);
+    color: var(--ff-blue) !important;
+}
+
+/*Search bar mobile*/
+nav .searchMobile{
+    width: 205px;
+    border-radius: 100px;
+    margin: 0px 0px;
+    margin-bottom: 15px;
+    border: 1px solid var(--very-light-pink);
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+}
+nav  .inputMobile{
+    width: 150px;
+    height: 28px;
+    border: none;
+    outline: none;
+}
+nav .searchMobile:hover{
+    box-shadow: 0 1px 6px 0 #20212447;
+    border-color: var(--ff-blue);
+}
+nav .search-iconMobile img{
+    width: 18px;
+    height: 18px;
+}
+
+@media (min-width: 1024px){
+    .mobile-menu{
+        display: none;
+    }
+}
