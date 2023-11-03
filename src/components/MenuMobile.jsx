@@ -1,5 +1,7 @@
 import React from "react";
-import '../styles/MenuMobile.scss';
+import '@styles/MenuMobile.scss';
+
+import search from "@icons/search.svg";
 
 const MenuMobile = () => {
     return(
@@ -7,7 +9,7 @@ const MenuMobile = () => {
         <ul>
             <div className="searchMobile">
                 <span className="search-iconMobile">
-                    <img src="./icons/search.svg" alt="search"/>
+                    <img src={search} alt="search"/>
                 </span>
                 <input className="inputMobile" type="text"/>
             </div>

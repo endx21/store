@@ -14,12 +14,6 @@ nav {
 .inactive{
     display: none;
 }
-.menu {
-    display: none;
-}
-.logo {
-    width: 100px;
-}
 aside {
     width: 360px;
     top: 61px;

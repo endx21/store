@@ -1,13 +1,18 @@
 import React from "react";
-import "../styles/Header.scss";
+import "@styles/Header.scss";
+
+import menu from '@icons/icon_menu.svg';
+import logo from '@logos/logo_store.png';
+import search from "@icons/search.svg";
+import shoppingCart from "@icons/icon_shopping_cart.png";
 
 const Header = () =>{
     return(
         <nav>
-            <img src="./icons/icon_menu.svg" alt="menu" className="menu"/>
+            <img src={menu} alt="menu" className="menu"/>
         
             <div className="navbar-left">
-            <img src="./logos/logo_store.png" alt="logo" className="logo"/>
+            <img src={logo} alt="logo" className="logo-nav"/>
         
             <ul>
                 <li>
@@ -32,7 +37,7 @@ const Header = () =>{
         </div>
         <div className="search">
         <span className="search-icon">
-            <img src="./icons/search.svg" alt="search"/>
+            <img src={search} alt="search"/>
         </span>
         <input className="" type="text"/>
         </div>
@@ -41,7 +46,7 @@ const Header = () =>{
             <ul>
                 <li className="navbar-email">user01@example.com</li>
                 <li className="navbar-shopping-cart">
-                <img src="./icons/icon_shopping_cart.png" alt="shopping cart"/>
+                <img src={shoppingCart} alt="shopping cart"/>
                 <div>3</div>
                 </li>
             </ul>
