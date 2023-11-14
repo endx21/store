@@ -5,7 +5,7 @@ import search from "@icons/search.svg";
 
 const MenuMobile = () => {
     return(
-        <div className="mobile-menu inactive">
+        <div className="mobile-menu">
         <ul>
             <div className="searchMobile">
                 <span className="search-iconMobile">

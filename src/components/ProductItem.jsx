@@ -1,18 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import "@styles/ProductItem.scss";
 
 import add from "@icons/bt_add_to_cart.png";
 
-const ProductItem = () => {
+const ProductItem = ({product}) => {
+    const [cart, setCart] = useState([]);
+
+    const handleClick = () => {
+        setCart([])
+    }
+
     return(
             <div className="product-card">
-                <img src="https://cdn.shopify.com/s/files/1/1320/2227/products/GlacierJacket-Black-Main-RGB_1200x.jpg?v=1617065304" alt="Jacket"/>
+                <img src={product.images[0]} alt={product.title}/>
                 <div className="product-info">
                 <div>
-                    <p>$30,00</p>
-                    <p>Glacier Jacket</p>
+                    <p>${product.price}</p>
+                    <p>{product.title}</p>
                 </div>
-                <figure>
+                <figure onClick={handleClick}>
                     <img src={add} alt=""/>
                 </figure>
                 </div>
