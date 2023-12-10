@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "@styles/Header.scss";
 import MenuDesk from "@components/MenuDesktop.jsx";
 import MenuMobile from "@components/MenuMobile.jsx";
@@ -6,21 +6,30 @@ import MyOrder from "@containers/MyOrder";
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_store.png';
 import search from "@icons/search.svg";
+import AppContext from "@context/AppContext";
 import shoppingCart from "@icons/icon_shopping_cart.png";
 
 const Header = () =>{
     const [toggle, setToggle] = useState(false);
-    const [toggleM, setToggleM] = useState(false);
-    const [toggleOrders, setToggleOrders] = useState(false);
+    const [toggleMobile, setToggleMobile] = useState(false);
 
+
+    const {state, setToggleOrders} = useContext(AppContext);
+
+    const handleToggleOrders = () => {
+        setToggleOrders(!state.toggleOrders);
+        setToggle(false);
+        setToggleMobile(false);
+    }
     const handleToggle = () => {
         setToggle(!toggle);
+        setToggleOrders(false);
+        setToggleMobile(false);
     }
     const handleToggleM = () => {
-        setToggleM(!toggleM);
-    }
-    const handleToggleOrders = () => {
-        setToggleOrders(!toggleOrders);
+        setToggleMobile(!toggleMobile);
+        setToggle(false);
+        setToggleOrders(false);
     }
 
     return(
@@ -61,15 +70,15 @@ const Header = () =>{
             <div className="navbar-right">
             <ul>
                 <li className="navbar-email" onClick={handleToggle}>user01@example.com</li>
-                <li className="navbar-shopping-cart">
-                <img src={shoppingCart} alt="shopping cart" onClick={handleToggleOrders}/>
-                <div>3</div>
+                <li className="navbar-shopping-cart" onClick={handleToggleOrders}>
+                <img src={shoppingCart} alt="shopping cart" />
+                {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
                 </li>
             </ul>
             </div>
             {toggle && <MenuDesk />}
-            {toggleM && <MenuMobile />}
-            {toggleOrders && <MyOrder />}
+            {toggleMobile && <MenuMobile />}
+            {state.toggleOrders && <MyOrder />}
     </nav>
     );
 }

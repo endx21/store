@@ -1,20 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from '../containers/Layout';
-import NewPassword from '../pages/NewPassword'
-import RecoveryPassword from '../pages/PasswordRecovery';
-import Home from '../pages/Home';
-import NotFound from '../pages/NotFound';
-import Login from '../pages/Login';
-import NewAccount from '../pages/NewAccount';
-import MyAccount from '../pages/MyAccount';
-import Checkout from '../pages/Checkout';
-import Orders from '../pages/Orders';
-import SendEmail from '../pages/SendEmail';
-import '../styles/global.css';
+import Layout from '@containers/Layout';
+import NewPassword from '@pages/NewPassword'
+import RecoveryPassword from '@pages/PasswordRecovery';
+import Home from '@pages/Home';
+import NotFound from '@pages/NotFound';
+import Login from '@pages/Login';
+import NewAccount from '@pages/NewAccount';
+import MyAccount from '@pages/MyAccount';
+import Checkout from '@pages/Checkout';
+import Orders from '@pages/Orders';
+import SendEmail from '@pages/SendEmail';
+import AppContext from '@context/AppContext';
+import useInitialState from '@hooks/useInitialState';
+import '@styles/global.css';
 
 const App = () => {
+    const InitialState = useInitialState(AppContext);
     return(
+    <AppContext.Provider value={InitialState}>
     <BrowserRouter>
         <Layout>
             <Routes>
@@ -31,6 +35,7 @@ const App = () => {
             </Routes>
         </Layout>
     </BrowserRouter>
+    </AppContext.Provider>
     );
 }
 

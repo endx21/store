@@ -6,6 +6,7 @@
 	gap: 16px;
 	margin-bottom: 24px;
 	align-items: center;
+	margin-right: 6px;
 }
 .OrderItem figure {
 	margin: 0;
@@ -15,6 +16,9 @@
 	height: 70px;
 	border-radius: 20px;
 	object-fit: cover;
+}
+.OrderItem img {
+	cursor: pointer;
 }
 .OrderItem p:nth-child(2) {
 	color: var(--very-light-pink);

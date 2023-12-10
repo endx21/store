@@ -16,9 +16,11 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@containers': path.resolve(__dirname, 'src/containers/'),
             '@hooks': path.resolve(__dirname, 'src/hooks/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
             '@styles': path.resolve(__dirname, 'src/styles/'),
             '@icons': path.resolve(__dirname, 'src/assets/icons/'),
             '@logos': path.resolve(__dirname, 'src/assets/logos/'),
+            '@context': path.resolve(__dirname, 'src/context/'),
         }
     },
     module: {
@@ -54,8 +56,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({ 
-            template: './public/index.html',
-            filename: './index.html'
+            template: 'index.html',
+            filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename:'[name].css'
