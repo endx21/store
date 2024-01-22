@@ -31,7 +31,7 @@ const App = () => {
                 <Route exact path="/send-email" element={<SendEmail />}/>
                 <Route exact path="/orders" element={<Orders />}/>
                 <Route exact path="/checkout" element={<Checkout />}/>
-                //<Route path="*" element={<NotFound />}/>
+                <Route path="*" element={<NotFound />}/>
             </Routes>
         </Layout>
     </BrowserRouter>
