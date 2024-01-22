@@ -6,10 +6,7 @@ import useGetProducts from "@hooks/useGetProducts";
 const API = 'https://api.escuelajs.co/api/v1/products';
 
 const ProductList = () => {
-    console.log('a')
     const products = useGetProducts(API);
-    console.log('b')
-    console.log(products)
     return(
         <section className="main-container">
         <div className="cards-container">
